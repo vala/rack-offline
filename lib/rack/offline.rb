@@ -47,6 +47,7 @@ module Rack
       body = ["CACHE MANIFEST"]
       body << "# #{key}"
       @config.cache.each do |item|
+        item = item.call if item.is_a? Proc
         body << URI.escape(item.to_s)
       end
 
