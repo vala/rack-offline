@@ -36,7 +36,7 @@ module Rails
             "#{root}/javascripts/**/*.js",
             "#{root}/images/**/*.*"]
         end
-        
+
         files.each do |file|
           cache Pathname.new(file).relative_path_from(root)
         end
